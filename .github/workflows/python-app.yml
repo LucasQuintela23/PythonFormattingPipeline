@@ -19,14 +19,14 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
-          pip install pylint black
+          pip ins   tall pylint black
 
       - name: Lint with Pylint
         run: |
           source venv/bin/activate
-          pylint nome_do_seu_arquivo.py
+          pylint teste.py
 
       - name: Format with Black
         run: |
           source venv/bin/activate
-          black nome_do_seu_arquivo.py --check
+          black teste.py --check
