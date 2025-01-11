@@ -1,0 +1,32 @@
+name: Python Lint and Format
+
+on: [push]
+
+jobs:
+  lint-and-format:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install pylint black
+
+      - name: Lint with Pylint
+        run: |
+          source venv/bin/activate
+          pylint nome_do_seu_arquivo.py
+
+      - name: Format with Black
+        run: |
+          source venv/bin/activate
+          black nome_do_seu_arquivo.py --check
