@@ -19,7 +19,7 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
-          pip ins   tall pylint black
+          pip install pylint black
 
       - name: Lint with Pylint
         run: |
