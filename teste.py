@@ -1,5 +1,5 @@
 """
-Este módulo contém exemplos de código para demonstração.
+Arquivo de teste
 """
 
 print("Hello, world!!")
